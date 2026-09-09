@@ -60,11 +60,13 @@ carry `Pre` / `Global` where meaningful (`SPARK_Mode => Off`).
 
 ## Algorithm sketch
 
-1. For each attribute \(a\), run \(\mathrm{DBSCAN}(DB,\{a\},\varepsilon,\mathrm{MinPts})\); keep non-empty \(S_1\), \(C_1\).
-2. While \(C_k \neq \emptyset\):  
-   \(\mathrm{CandS}_{k+1} := \mathrm{GenerateCandidateSubspaces}(S_k)\).
-3. For each candidate, pick **bestSubspace** = \(k\)-subset with minimal total clustered points; for each cluster \(cl\) therein, run \(\mathrm{DBSCAN}(cl, cand, \ldots)\) and union.
-4. Record subspaces that still contain clusters into \(S_{k+1}\), \(C_{k+1}\).
+1. For each attribute $a$, run $\mathrm{DBSCAN}(DB, \{a\}, \varepsilon, \mathrm{MinPts})$; keep non-empty $S_1$, $C_1$.
+2. While $C_k \neq \emptyset$:  
+   $\mathrm{CandS}_{k+1} := \mathrm{GenerateCandidateSubspaces}(S_k)$.
+3. For each candidate, pick **bestSubspace** = $k$-subset with minimal total clustered points; for each cluster $cl$ therein, run $\mathrm{DBSCAN}(cl, cand, \ldots)$ and union.
+4. Record subspaces that still contain clusters into $S_{k+1}$, $C_{k+1}$.
+
+`GenerateCandidateSubspaces` joins pairs of $k$-spaces that differ in exactly one attribute, then **prunes** any $(k+1)$-candidate whose some $k$-subset is absent from $S_k$.
 
 `GenerateCandidateSubspaces` joins pairs of \(k\)-spaces that differ in exactly
 one attribute, then **prunes** any \((k+1)\)-candidate whose some \(k\)-subset
