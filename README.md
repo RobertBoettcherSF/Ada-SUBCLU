@@ -25,12 +25,12 @@ Part of the **RobertBoettcherSF Ada algorithms series**.
 
 | Concern | Approach | Notes |
 | --- | --- | --- |
-| **Distance** | L2 on selected dims only | Subspace projection |
+| **Distance** | $L_2$ on selected dims only | Subspace projection |
 | **DBSCAN** | Core / density-reachability | Same Eps, MinPts as classic DBSCAN |
-| **1D pass** | DBSCAN per attribute | Seeds \(S_1\), \(C_1\) |
+| **1D pass** | DBSCAN per attribute | Seeds $S_1$, $C_1$ |
 | **Candidates** | Differ-by-one join + prune | Apriori-style |
 | **Higher-D** | DBSCAN on best lower cluster | Minimize points scanned |
-| **Closure** | Density-connected in \(S\) ⇒ in \(T\subseteq S\) | Prunes empty candidates |
+| **Closure** | Density-connected in $S \implies$ in $T \subseteq S$ | Prunes empty candidates |
 
 ## Parameters
 
