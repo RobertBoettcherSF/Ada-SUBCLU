@@ -68,10 +68,6 @@ carry `Pre` / `Global` where meaningful (`SPARK_Mode => Off`).
 
 `GenerateCandidateSubspaces` joins pairs of $k$-spaces that differ in exactly one attribute, then **prunes** any $(k+1)$-candidate whose some $k$-subset is absent from $S_k$.
 
-`GenerateCandidateSubspaces` joins pairs of \(k\)-spaces that differ in exactly
-one attribute, then **prunes** any \((k+1)\)-candidate whose some \(k\)-subset
-is absent from \(S_k\).
-
 ## Build and test
 
 ```bash
