@@ -10,8 +10,8 @@ SUBCLU finds **axis-parallel** clusters in **subspaces** of high-dimensional
 data. It builds on **DBSCAN**: a cluster is a maximal density-connected set
 under parameters **ε (Eps)** and **MinPts**. A bottom-up, Apriori-style
 search enumerates promising subspaces using the **downward-closure**
-property: a density-connected set in subspace \(S\) is also density-connected
-in every \(T \subseteq S\).
+property: a density-connected set in subspace $S$ is also density-connected
+in every $T \subseteq S$.
 
 Language: **Ada 2023** (ISO/IEC 8652:2023), compiled with GNAT (`-gnat2022`).
 
